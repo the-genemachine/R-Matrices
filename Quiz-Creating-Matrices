@@ -1,0 +1,49 @@
+library(shiny)
+
+# Define UI for the quiz application
+ui <- fluidPage(
+    titlePanel("Matrix Basics Quiz"),
+    
+    sidebarLayout(
+        sidebarPanel(
+            # Question 1
+            radioButtons("q1", "1. What function is used to create matrices in R?",
+                         choices = c("matrix()", "array()", "createMatrix()", "rMatrix()")),
+            
+            # Question 2
+            radioButtons("q2", "2. By default, in which direction does the matrix() function fill the values?",
+                         choices = c("Row-wise", "Column-wise")),
+            
+            # Question 3
+            radioButtons("q3", "3. What will be the dimension of a matrix created by matrix(1:6, nrow = 2)?",
+                         choices = c("2x3", "3x2", "2x2", "2x6")),
+            
+            # Submit button
+            actionButton("submit", "Submit Answers")
+        ),
+        
+        mainPanel(
+            textOutput("resultOutput")
+        )
+    )
+)
+
+# Define server logic
+server <- function(input, output) {
+    
+    observeEvent(input$submit, {
+        # Check answers
+        correct_answers <- c("matrix()", "Column-wise", "2x3")
+        user_answers <- c(input$q1, input$q2, input$q3)
+        
+        correct_count <- sum(user_answers == correct_answers)
+        
+        # Provide feedback
+        output$resultOutput <- renderText({
+            paste("You got", correct_count, "out of 3 questions right!")
+        })
+    })
+}
+
+# Run the application
+shinyApp(ui = ui, server = server)
