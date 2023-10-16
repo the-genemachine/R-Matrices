@@ -17,6 +17,27 @@ ui <- fluidPage(
             # Question 3
             radioButtons("q3", "3. What will be the dimension of a matrix created by matrix(1:6, nrow = 2)?",
                          choices = c("2x3", "3x2", "2x2", "2x6")),
+
+            # Question 4
+            radioButtons("q4", "4. How do you specify the number of columns when creating a matrix?",
+             choices = c("col.num", "ncol", "num.col", "colCount")),
+
+            # Question 5
+            radioButtons("q5", "5. How do you bind two vectors vertically to create a matrix?",
+             choices = c("vbind()", "bind_vert()", "vertcat()", "rbind()")),
+
+            # Question 6
+            radioButtons("q6", "6. What is the result of dim(matrix(1:6, ncol=2))?",
+             choices = c("c(2, 3)", "c(3, 2)", "c(6, 1)", "c(1, 6)")),
+
+            # Question 7
+            radioButtons("q7", "7. Which function can be used to create a diagonal matrix?",
+             choices = c("diag()", "diagonalize()", "createDiag()", "getDiagonal()")),
+
+            # Question 8
+            radioButtons("q8", "8. If m is a matrix, which command retrieves its second column?",
+             choices = c("m[2,]", "m[,2]", "m[2]", "m[2][,]"))
+
             
             # Submit button
             actionButton("submit", "Submit Answers")
@@ -33,7 +54,7 @@ server <- function(input, output) {
     
     observeEvent(input$submit, {
         # Check answers
-        correct_answers <- c("matrix()", "Column-wise", "2x3")
+        correct_answers <- c("matrix()", "Column-wise", "2x3", "ncol", "rbind()", "c(3, 2)", "diag()", "m[,2]"
         user_answers <- c(input$q1, input$q2, input$q3)
         
         correct_count <- sum(user_answers == correct_answers)
