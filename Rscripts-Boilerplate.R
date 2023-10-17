@@ -16,6 +16,7 @@ options(error = recover)           # provides menu to jump to error location
 # setwd("/path/to/your/directory")
 
 # 4. Load required libraries/packages
+
 # If you don't have these installed, install using install.packages('package_name')
 # library(tidyverse)  # for data manipulation and visualization
 
@@ -30,6 +31,8 @@ display_title <- function(title) {
 # Load data, perform analysis, etc.
 # data <- read.csv("data.csv")
 display_title("Data")
+
+
 # 7. Save results (if required)
 # saveRDS(result, "results.RDS")
 
