@@ -78,9 +78,31 @@ ui <- fluidPage(
              choices = c("2x2 matrix with numbers 1, 3, 5, 7", 
                          "3x2 matrix with numbers 1, 3, 5, 7, and 9 filled column-wise", 
                          "2x3 matrix with numbers 1, 3, 5, 7, and 9 filled row-wise", 
-                         "3x3 matrix with numbers 1, 3, 5, 7, 9, and 11"))
+                         "3x3 matrix with numbers 1, 3, 5, 7, 9, and 11")),
 
+            # Question 15
+            radioButtons("q15", "15. What will be the dimension of the matrix created by this code?\nmatrix(1:20, ncol=4)",
+             choices = c("4x5", "5x4", "20x1", "1x20")),
 
+            # Question 16
+            radioButtons("q16", "16. If mat is a matrix, which command retrieves its third row?",
+             choices = c("mat[3,]", "mat[,3]", "mat[3]", "mat[3][,]")),
+
+            # Question 17
+            radioButtons("q17", "17. How do you bind two matrices, A and B, vertically?",
+             choices = c("cbind(A, B)", "abind(A, B)", "rbind(A, B)", "bind(A, B)")),
+
+            # Question 18
+            radioButtons("q18", "18. Which of the following is not a valid way to initialize a matrix with zero values?",
+             choices = c("matrix(0, nrow=3, ncol=3)", "matrix(0, 3, 3)", "array(0, dim=c(3,3))", "zeros(3,3)")),
+
+            # Question 19
+            radioButtons("q19", "19. If m1 is a 3x3 matrix and m2 is a 3x1 matrix, which operation will you use to multiply them?",
+             choices = c("%*%", "*", "mul()", "cross()")),
+
+            # Question 20
+            radioButtons("q20", "20. How do you transform a matrix into its transpose?",
+             choices = c("transpose(mat)", "t(mat)", "mat^T", "rev(mat)")),
             
             # Submit button
             actionButton("submit", "Submit Answers")
@@ -104,17 +126,18 @@ server <- function(input, output) {
                      "diag(3)", 
                      "cbind(a, b)", 
                      "matrix(c(4, 2, 3, 1), nrow = 2, byrow = TRUE)", 
-                     "3x2 matrix with numbers 1, 3, 5, 7, and 9 filled column-wise")
+                     "3x2 matrix with numbers 1, 3, 5, 7, and 9 filled column-wise",
+                     "5x4", "mat[3,]", "rbind(A, B)", "zeros(3,3)", "%*%", "t(mat)")
 
         user_answers <- c(input$q1, input$q2, input$q3, input$q4, input$q5, input$q6, input$q7, input$q8,
-                  input$q9, input$q10, input$q11, input$q12, input$q13, input$q14)
+                  input$q9, input$q10, input$q11, input$q12, input$q13, input$q14, input$q15, input$q16, input$q17, input$q18, input$q19, input$q20)
 
         
         correct_count <- sum(user_answers == correct_answers)
         
         # Provide feedback
         output$resultOutput <- renderText({
-            paste("You got", correct_count, "out of 3 questions right!")
+            paste("You got", correct_count, "out of 20 questions right!")
         })
     })
 }
