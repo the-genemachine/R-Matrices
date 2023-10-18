@@ -1,8 +1,8 @@
 # -----------------------------------------------------------------------------
-# R Script Boilerplate
+# R Script Adding-Matrices.R
 # Author: Gene Gallant
-# Date: October 14th, 2023
-# Description: A template for R scripts
+# Date: October 17th, 2023
+# Description: A script to demonstrate adding matrices in R
 # -----------------------------------------------------------------------------
 
 # 1. Clear the console
