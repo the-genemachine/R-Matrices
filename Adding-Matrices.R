@@ -32,19 +32,29 @@ display_title <- function(title) {
   cat(red_start, double_border, red_end, "\n\n")
 }
 
+##################################################################
+# build and add two 5 x 5 matrix of random of sequential numbers #
+##################################################################
 
-# 6. Main code
+display_title("Adding Matrices")
 
-display_title("Title")
+cat("\n")
 
+print_heading("A two 5 x 5 matrices of sequential numbers")
+matrix1 <- matrix(1:25, nrow = 5, ncol = 5, byrow = TRUE)
+print(matrix1)
 
-# 7. Save results (if required)
-# saveRDS(result, "results.RDS")
+cat("\n")
 
-# 8. End of script message
-# message("Script completed!")
+matrix2 <- matrix(1:25, nrow = 5, ncol = 5, byrow = TRUE)
+print(matrix2)
+
+cat("\n")
+
+matrix3 <- matrix1 + matrix2
 
 # 9. End of script message with timestamp
+
 display_title("Script completed!")
 # -----------------------------------------------------------------------------
 # End of Script
