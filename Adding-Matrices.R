@@ -53,15 +53,15 @@ print(matrix2)
 
 cat("\n")
 
-#################################################
-# Adding two 4 x 4 matrices with random numbers #
-#################################################
-
 cat("Matrix 3 : Matrix 1 + Matrix 2\n\n")
 matrix3 <- matrix1 + matrix2
 print(matrix3)
 
 cat("\n")
+
+#################################################
+# Adding two 4 x 4 matrices with random numbers #
+#################################################
 
 print_heading("Adding two 4 x 4 matrices with random numbers")
 
@@ -77,15 +77,15 @@ print(matrix5)
 
 cat("\n")
 
-###################################################
-# Adding two 3 x 3 matrices with specific numbers #
-###################################################
-
 cat("Matrix 6 : Matrix 4 + Matrix 5\n\n")
 matrix6 <- matrix4 + matrix5
 print(matrix6)
 
 cat("\n")
+
+###################################################
+# Adding two 3 x 3 matrices with specific numbers #
+###################################################
 
 print_heading("Adding two 3 x 3 matrices with specific numbers")
 
