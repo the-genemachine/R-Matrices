@@ -16,10 +16,18 @@ Subtract corresponding elements of two matrices. The matrices should be of the s
 
 Element-wise multiplication (using *) multiplies corresponding elements of two matrices. Matrix multiplication (using %*%) computes the product as per the rules of linear algebra.
 
+The multiplication operator %*% is used for matrix multiplication in R. The matrices being multiplied must adhere to the rules of matrix multiplication where the number of columns in the first matrix is equal to the number of rows in the second matrix.
+
 ### Division
 
 Divide corresponding elements of one matrix by another (element-wise).
 Scalar Operations: You can add, subtract, multiply, or divide every element of a matrix by a scalar value.
+
+Matrix division isn't as straightforward as addition, subtraction, or multiplication. When we talk about "dividing" matrices, we are usually referring to finding the inverse of a matrix and then multiplying it. In R, you can obtain the inverse of a matrix using the solve() function.
+
+However, it's important to note that not all matrices are invertible. Also, matrix division isn't performed element-wise like scalar division (for element-wise division, you'd use the / operator, but this isn't true matrix division).
+
+For our purpose here, I will show you how to "divide" a matrix A by another matrix B by computing A %*% solve(B). This assumes that matrix B is invertible.
 
 ### Matrix Transpose
 
