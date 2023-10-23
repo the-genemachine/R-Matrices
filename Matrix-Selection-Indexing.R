@@ -51,8 +51,9 @@ print(matrix1[2,3])
 cat("\n")
 
 # Selecting the entire 4th row
-cat("Entire 4th row: matrix1[4,] \n")
+cat("Entire 4th row: \033[1;33mmatrix1[4,]\033[0m \n")
 print(matrix1[4,])
+
 
 cat("\n")
 
