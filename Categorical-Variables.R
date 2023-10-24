@@ -1,7 +1,7 @@
 # -----------------------------------------------------------------------------
 # R Script Categorical-Variables.R
 # Author: Gene Gallant
-# Date: October 18th, 2023
+# Date: October 22th, 2023
 # Description: A script to demonstrate nominal and ordinal variables in R
 # -----------------------------------------------------------------------------
 
